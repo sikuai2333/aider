@@ -1,0 +1,17 @@
+#!/bin/bash
+# aider-autonomous - Start aider in autonomous exploration mode
+# Usage: aider-autonomous [project_dir] [max_iterations]
+
+PROJECT_DIR="${1:-.}"
+MAX_ITERATIONS="${2:-5}"
+
+echo "🤖 Aider Autonomous Mode"
+echo "   Project: $PROJECT_DIR"
+echo "   Max iterations: $MAX_ITERATIONS"
+echo "   Press Ctrl+C to stop"
+echo ""
+
+cd "$PROJECT_DIR" || exit 1
+
+# Start aider with autonomous command
+aider --message "/autonomous $MAX_ITERATIONS"
